@@ -267,6 +267,8 @@ void CJBMod_Player::GiveDefaultItems( void )
 	
 	GiveNamedItem( "weapon_pistol" );
 	GiveNamedItem( "weapon_smg1" );
+	//Might be a good idea to have a server convar that determines whether to give the physgun or not
+	GiveNamedItem("weapon_physgun");
 	GiveNamedItem( "weapon_frag" );
 	GiveNamedItem( "weapon_physcannon" );
 
