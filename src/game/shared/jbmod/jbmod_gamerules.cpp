@@ -176,8 +176,8 @@ char *sTeamNames[] =
 {
 	"Unassigned",
 	"Spectator",
-	"Combine",
-	"Rebels",
+	"Blue",
+	"Red",
 };
 
 CJBModRules::CJBModRules()
