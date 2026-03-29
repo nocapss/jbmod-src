@@ -42,6 +42,10 @@ ConVar sv_jbmod_weapon_respawn_time( "sv_jbmod_weapon_respawn_time", "20", FCVAR
 ConVar sv_jbmod_item_respawn_time( "sv_jbmod_item_respawn_time", "30", FCVAR_GAMEDLL | FCVAR_NOTIFY );
 ConVar sv_report_client_settings("sv_report_client_settings", "0", FCVAR_GAMEDLL | FCVAR_NOTIFY );
 
+ConVar	sk_plr_dmg_flare_round("sk_plr_dmg_flare_round", "12", FCVAR_REPLICATED);
+ConVar	sk_npc_dmg_flare_round("sk_npc_dmg_flare_round", "2", FCVAR_REPLICATED);
+ConVar	sk_max_flare_round("sk_max_flare_round", "20", FCVAR_REPLICATED);
+
 extern ConVar mp_chattime;
 
 extern CBaseEntity	 *g_pLastCombineSpawn;
@@ -968,6 +972,7 @@ CAmmoDef *GetAmmoDef()
 	{
 		bInitted = true;
 
+		// Default HL2MP ammo types.
 		def.AddAmmoType("AR2",				DMG_BULLET,					TRACER_LINE_AND_WHIZ,	0,			0,			60,			BULLET_IMPULSE(200, 1225),	0 );
 		def.AddAmmoType("AR2AltFire",		DMG_DISSOLVE,				TRACER_NONE,			0,			0,			3,			0,							0 );
 		def.AddAmmoType("Pistol",			DMG_BULLET,					TRACER_LINE_AND_WHIZ,	0,			0,			150,		BULLET_IMPULSE(200, 1225),	0 );
@@ -979,6 +984,9 @@ CAmmoDef *GetAmmoDef()
 		def.AddAmmoType("SMG1_Grenade",		DMG_BURN,					TRACER_NONE,			0,			0,			3,			0,							0 );
 		def.AddAmmoType("Grenade",			DMG_BURN,					TRACER_NONE,			0,			0,			5,			0,							0 );
 		def.AddAmmoType("slam",				DMG_BURN,					TRACER_NONE,			0,			0,			5,			0,							0 );
+
+		// Ammo types used in JBMod
+		def.AddAmmoType("FlareRound", DMG_BURN, TRACER_LINE, "sk_plr_dmg_flare_round", "sk_npc_dmg_flare_round", "sk_max_flare_round", BULLET_IMPULSE(1500, 600), 0);
 	}
 
 	return &def;
