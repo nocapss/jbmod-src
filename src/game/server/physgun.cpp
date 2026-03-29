@@ -1222,7 +1222,7 @@ void CWeaponGravityGun::AttachObject( CBaseEntity *pObject, const Vector& start,
 
 		m_gravCallback.AttachEntity( pObject, pPhysics, end );
 		float mass = pPhysics->GetMass();
-		Msg( "Object mass: %.2f lbs (%.2f kg)\n", kg2lbs(mass), mass );
+		DevMsg( "Object mass: %.2f lbs (%.2f kg)\n", kg2lbs(mass), mass );
 		float vel = phys_gunvel.GetFloat();
 		if ( mass > phys_gunmass.GetFloat() )
 		{
