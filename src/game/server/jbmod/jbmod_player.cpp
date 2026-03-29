@@ -241,6 +241,9 @@ void CJBMod_Player::GiveAllItems( void )
 
 	GiveNamedItem( "weapon_physcannon" );
 	
+	//Spawn the player in with the physgun.
+	GiveNamedItem( "weapon_physgun" );
+	
 }
 
 void CJBMod_Player::GiveDefaultItems( void )

@@ -33,7 +33,7 @@ ConVar phys_gunglueradius("phys_gunglueradius", "128" );
 static int g_physgunBeam;
 #define PHYSGUN_BEAM_SPRITE		"sprites/physbeam.vmt"
 
-#define MAX_PELLETS	16
+#define MAX_PELLETS	512
 
 class CWeaponGravityGun;
 
@@ -46,7 +46,7 @@ public:
 	~CGravityPellet();
 	void Precache()
 	{
-		SetModelName( MAKE_STRING( "models/weapons/glueblob.mdl" ) );
+		SetModelName( MAKE_STRING( "models/weapons/w_bugbait.mdl" ) );
 		PrecacheModel( STRING( GetModelName() ) );
 		BaseClass::Precache();
 	}
@@ -840,6 +840,7 @@ void CWeaponGravityGun::EffectUpdate( void )
 	else
 	{
 		m_gravCallback.ClearAutoAlign();
+    NetworkStateChanged();
 	}
 }
 
@@ -1423,6 +1424,7 @@ bool CWeaponGravityGun::Reload( void )
 }
 
 #define NUM_COLLISION_TESTS 2500
+/*
 void CC_CollisionTest( const CCommand &args )
 {
 	if ( !physenv )
@@ -1521,3 +1523,4 @@ void CC_CollisionTest( const CCommand &args )
 #endif
 }
 static ConCommand collision_test("collision_test", CC_CollisionTest, "Tests collision system", FCVAR_CHEAT );
+*/

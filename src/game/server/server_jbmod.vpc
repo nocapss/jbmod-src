@@ -464,6 +464,7 @@ $Project "Server (JBMod)"
 				$File	"$SRCDIR\game\shared\jbmod\weapon_slam.h"
 				$File	"$SRCDIR\game\shared\jbmod\weapon_smg1.cpp"
 				$File	"$SRCDIR\game\shared\jbmod\weapon_stunstick.cpp"
+				$File "$SRCDIR\game\server\physgun.cpp" 
 			}
 		}
 	}
